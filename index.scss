@@ -2,7 +2,9 @@
 //TODO: add a param for optional positioning on the parent object
 
 
-@mixin triangle($direction, $size: 12px, $color: currentColor) {
+@mixin triangle($direction, $size: 12px, $color: currentColor, $before: false) {
+
+  $pseudo: if($before, 'before', 'after');
 
   @if (length($size) > 2) {
     $a: nth($size, 1);
@@ -20,7 +22,7 @@
     @error "Invalid size \"#{$size}\"";
   }
 
-  &:after {
+  &:#{$pseudo} {
 
     display: inline-block;
     content: "";
@@ -55,6 +57,8 @@
     } @else {
       @error "Invalid direction \"#{$direction}\"";
     }
+
+    @content;
 
   }
 

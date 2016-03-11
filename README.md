@@ -24,7 +24,7 @@ Mixin for creating CSS triangles.
 }
 
 .triangle-4 {
-  @include triangle(down, 16px, $color: #ff1870);
+  @include triangle(down, 16px, $color: #ff1870, $before: true);
 }
 
 ```
