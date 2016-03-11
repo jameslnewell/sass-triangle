@@ -1,17 +1,21 @@
 @import "..";
 
 .triangle-1 {
-  @include triangle(up, 24px, $color: #ffe619); //3 almost equal length sides
+  @include triangle(up, 20px, $color: #ffe619); //20px wide and 20px high
 }
 
 .triangle-2 {
-  @include triangle(right, 24px 10px, $color: #ffaf14); //2 equal sides
+  @include triangle(down, 20px 20px, $color: #ff3005); //20px wide and 20px high
 }
 
 .triangle-3 {
-  @include triangle(left, 24px 12px 0px, $color: #ff3005); //no equal sides
+  @include triangle(left, 20px 10px, $color: #ffaf14); //20px wide and 10px high
 }
 
 .triangle-4 {
-  @include triangle(down, 16px, $color: #ff1870, $before: true);
+  @include triangle(down, 20px 5px, $color: #ff1870); //20px wide and 5px high
+}
+
+.triangle-5 {
+  @include triangle(right, 20px 10px 5px, $color: #ff28ca, $before: true); //weird! three different border sizes makes 10px high and 25px wide
 }
