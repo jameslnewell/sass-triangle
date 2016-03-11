@@ -1,0 +1,61 @@
+
+//TODO: add a param for optional positioning on the parent object
+
+
+@mixin triangle($direction, $size: 12px, $color: currentColor) {
+
+  @if (length($size) > 2) {
+    $a: nth($size, 1);
+    $b: nth($size, 2);
+    $c: nth($size, 3);
+  } @else if (length($size) > 1) {
+    $a: nth($size, 1);
+    $b: nth($size, 2);
+    $c: nth($size, 2);
+  } @else if (length($size) == 1) {
+    $a: nth($size, 1);
+    $b: nth($size, 1);
+    $c: nth($size, 1);
+  } @else {
+    @error "Invalid size \"#{$size}\"";
+  }
+
+  &:after {
+
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+
+    @if $direction == 'up' {
+
+      border-bottom: $a solid $color;
+      border-left: $b solid transparent;
+      border-right: $c solid transparent;
+
+    } @else if $direction == 'down' {
+
+      border-top: $a solid $color;
+      border-left: $b solid transparent;
+      border-right: $c solid transparent;
+
+    } @else if $direction == 'left' {
+
+      border-right: $a solid $color;
+      border-top: $b solid transparent;
+      border-bottom: $c solid transparent;
+
+    } @else if $direction == 'right' {
+
+      border-left: $a solid $color;
+      border-top: $b solid transparent;
+      border-bottom: $c solid transparent;
+
+    } @else {
+      @error "Invalid direction \"#{$direction}\"";
+    }
+
+  }
+
+}

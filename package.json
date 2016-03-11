@@ -1,0 +1,11 @@
+{
+  "name": "sass-triangle",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "sass-composer": "^2.0.0-beta15"
+  },
+  "scripts": {
+    "example.build": "sass-composer example/index.scss -o example/index.example.css"
+  }
+}

@@ -1,0 +1,17 @@
+@import "..";
+
+.triangle-1 {
+  @include triangle(up, 24px, $color: #ffe619); //equal length sides
+}
+
+.triangle-2 {
+  @include triangle(right, 24px 10px, $color: #ffaf14);
+}
+
+.triangle-3 {
+  @include triangle(left, 24px 12px 0px, $color: #ff3005);
+}
+
+.triangle-4 {
+  @include triangle(down, 16px, $color: #ff1870);
+}
