@@ -4,6 +4,9 @@
 
 @mixin triangle($direction, $size: 12px, $color: currentColor, $before: false) {
 
+  $w: null;
+  $h: null;
+  $c: null;
   $length: length($size);
   $pseudo: if($before, 'before', 'after');
 
